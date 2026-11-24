@@ -1,8 +1,128 @@
-<!doctype html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Leddy Uniforms | VAT Calculator</title><meta name="description" content="Calculate selling prices excluding VAT in seconds."><style>*{box-sizing:border-box}body{margin:0;background:#f3f7fb;color:#11164c;font-family:Arial,sans-serif}main{max-width:1040px;margin:auto;padding:48px 24px}.brand{font-size:13px;letter-spacing:2px;font-weight:bold}.tag{color:#69728a;font-size:12px;letter-spacing:2px;margin:64px 0 16px}h1{font-size:clamp(36px,6vw,60px);letter-spacing:-2px;margin:0 0 16px;max-width:700px} .intro{color:#66718a;line-height:1.6;margin-bottom:36px}.calculator{display:grid;grid-template-columns:1fr 1fr;background:white;border:1px solid #dce5ef;border-radius:20px;overflow:hidden;box-shadow:0 16px 50px #11164c08}.inputs,.results{padding:36px}.results{background:#11164c;color:white}label{display:block;font-size:14px;font-weight:bold;margin:0 0 12px}input{font:inherit;width:100%;border:1px solid #ccd7e6;border-radius:9px;padding:16px;font-size:24px;color:#11164c;background:white}input:focus{outline:2px solid #8acde2;outline-offset:2px}.field{margin-bottom:28px}.chips{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}button{font:inherit;cursor:pointer;border-radius:7px;border:1px solid #ccd7e6;background:white;color:#11164c;padding:9px 13px}.chips button.active{background:#e2f4fa;border-color:#72b9d2}.small{font-size:12px;line-height:1.6;color:#64738b}.result-label{font-size:13px;color:#c1d8ec;margin:0 0 14px}.big{font-size:clamp(42px,6vw,64px);font-weight:bold;letter-spacing:-2px;overflow-wrap:anywhere;margin:0 0 12px}.rule{height:1px;background:#ffffff30;margin:28px 0}.row{display:flex;justify-content:space-between;gap:16px;margin:18px 0;font-size:14px}.copy{background:#8ed3e8;border:none;width:100%;padding:14px;font-weight:bold;margin-top:20px}.formula{background:#e5f1f8;border-radius:12px;padding:22px 26px;margin-top:24px;font-size:14px;line-height:1.7}.formula strong{display:block}.foot{margin-top:26px;font-size:12px;color:#68768c}#error{color:#a62d30;font-size:13px;min-height:18px}@media(max-width:650px){main{padding:30px 18px}.tag{margin-top:40px}.calculator{grid-template-columns:1fr}.inputs,.results{padding:26px}h1{letter-spacing:-1px}}.brand{display:flex;align-items:center;gap:18px;letter-spacing:1.5px;color:#11164c;font-size:16px}.brand img{object-fit:contain}.brand small{display:block;font-size:11px;letter-spacing:2px;font-weight:normal;margin-top:9px;color:#62718b}.tag{margin-top:38px}.copy:hover{background:#b1e3f1}.foot:after{content:" • Leddy Uniforms"}@media(max-width:650px){.brand img{width:84px;height:84px}.brand{font-size:14px;gap:12px}}.app-tools{display:flex;align-items:center;gap:14px;flex-wrap:wrap;margin-top:24px}.app-tools span{font-size:12px;color:#64738b}#install-app{background:#11164c;color:white;border:0;padding:12px 18px}[hidden]{display:none!important}</style><link rel="manifest" href="manifest.webmanifest">
+<!doctype html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Leddy Uniforms | VAT Calculator</title><meta name="description" content="Calculate selling prices excluding VAT in seconds."><style>*{box-sizing:border-box}body{margin:0;background:#f3f7fb;color:#11164c;font-family:Arial,sans-serif}main{max-width:1040px;margin:auto;padding:48px 24px}.brand{font-size:13px;letter-spacing:2px;font-weight:bold}.tag{color:#69728a;font-size:12px;letter-spacing:2px;margin:64px 0 16px}h1{font-size:clamp(36px,6vw,60px);letter-spacing:-2px;margin:0 0 16px;max-width:700px} .intro{color:#66718a;line-height:1.6;margin-bottom:36px}.calculator{display:grid;grid-template-columns:1fr 1fr;background:white;border:1px solid #dce5ef;border-radius:20px;overflow:hidden;box-shadow:0 16px 50px #11164c08}.inputs,.results{padding:36px}.results{background:#11164c;color:white}label{display:block;font-size:14px;font-weight:bold;margin:0 0 12px}input{font:inherit;width:100%;border:1px solid #ccd7e6;border-radius:9px;padding:16px;font-size:24px;color:#11164c;background:white}input:focus{outline:2px solid #8acde2;outline-offset:2px}.field{margin-bottom:28px}.chips{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}button{font:inherit;cursor:pointer;border-radius:7px;border:1px solid #ccd7e6;background:white;color:#11164c;padding:9px 13px}.chips button.active{background:#e2f4fa;border-color:#72b9d2}.small{font-size:12px;line-height:1.6;color:#64738b}.result-label{font-size:13px;color:#c1d8ec;margin:0 0 14px}.big{font-size:clamp(42px,6vw,64px);font-weight:bold;letter-spacing:-2px;overflow-wrap:anywhere;margin:0 0 12px}.rule{height:1px;background:#ffffff30;margin:28px 0}.row{display:flex;justify-content:space-between;gap:16px;margin:18px 0;font-size:14px}.copy{background:#8ed3e8;border:none;width:100%;padding:14px;font-weight:bold;margin-top:20px}.formula{background:#e5f1f8;border-radius:12px;padding:22px 26px;margin-top:24px;font-size:14px;line-height:1.7}.formula strong{display:block}.foot{margin-top:26px;font-size:12px;color:#68768c}#error{color:#a62d30;font-size:13px;min-height:18px}@media(max-width:650px){main{padding:30px 18px}.tag{margin-top:40px}.calculator{grid-template-columns:1fr}.inputs,.results{padding:26px}h1{letter-spacing:-1px}}.brand{display:flex;align-items:center;gap:18px;letter-spacing:1.5px;color:#11164c;font-size:16px}.brand img{object-fit:contain}.brand small{display:block;font-size:11px;letter-spacing:2px;font-weight:normal;margin-top:9px;color:#62718b}.tag{margin-top:38px}.copy:hover{background:#b1e3f1}.foot:after{content:" • Leddy Uniforms"}@media(max-width:650px){.brand img{width:84px;height:84px}.brand{font-size:14px;gap:12px}}.app-tools{display:flex;align-items:center;gap:14px;flex-wrap:wrap;margin-top:24px}.app-tools span{font-size:12px;color:#64738b}#install-app{background:#11164c;color:white;border:0;padding:12px 18px}[hidden]{display:none!important}
+/* Simple calculator */
+.basic{display:grid;grid-template-columns:1fr 1fr;gap:36px;background:white;border:1px solid #dce5ef;border-radius:20px;padding:36px;margin-top:24px;box-shadow:0 16px 50px #11164c08}.basic:focus{outline:none}.basic h2{font-size:22px;letter-spacing:-.5px;margin:0 0 8px}.basic .small{margin:0 0 22px}.cdisplay{background:#f3f7fb;border:1px solid #dce5ef;border-radius:12px;padding:18px 20px;text-align:right;min-height:104px;display:flex;flex-direction:column;justify-content:flex-end}.cexpr{font-size:13px;color:#64738b;min-height:18px;overflow-wrap:anywhere}.cval{font-size:clamp(30px,5vw,44px);font-weight:bold;letter-spacing:-1px;overflow-wrap:anywhere;line-height:1.15;margin-top:6px}.cactions{display:flex;gap:10px;flex-wrap:wrap;margin-top:16px}.cactions button{font-weight:bold}#c-use{background:#11164c;color:white;border-color:#11164c}#c-use:disabled{opacity:.4;cursor:not-allowed}#c-copy{background:#8ed3e8;border-color:#8ed3e8}#c-msg{font-size:12px;color:#64738b;min-height:18px;margin:12px 0 0}.keys{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}.keys button{padding:0;height:60px;font-size:20px;border-radius:10px;background:#f3f7fb;border-color:#dce5ef}.keys button:hover{background:#e2f4fa}.keys button:active{transform:scale(.97)}.keys .op{background:#e2f4fa;border-color:#72b9d2;font-weight:bold}.keys .fn{color:#64738b}.keys .eq{background:#11164c;color:white;border-color:#11164c}.keys .eq:hover{background:#242b73}.keys .zero{grid-column:span 2}.keys button:focus-visible,.cactions button:focus-visible{outline:2px solid #8acde2;outline-offset:2px}@media(max-width:650px){.basic{grid-template-columns:1fr;padding:26px;gap:24px}.keys button{height:56px}}</style><link rel="manifest" href="manifest.webmanifest">
 <meta name="theme-color" content="#11164c">
 <link rel="icon" type="image/png" href="icon-192.png">
-<meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="default"><meta name="apple-mobile-web-app-title" content="Leddy VAT"><link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png"></head><body><main><header class="brand"><img src="leddy-logo.png" alt="Leddy Uniforms" width="108" height="108"><span>LEDDY UNIFORMS<small>VAT PRICE CALCULATOR</small></span></header><div class="app-tools"><button id="install-app" hidden>Install Leddy VAT</button><span id="apple-install" hidden>iPhone / iPad: Safari → Share → Add to Home Screen.</span><span id="offline-status" role="status">Preparing offline access…</span></div><p class="tag">EVERYDAY TOOLS FOR YOUR TEAM.</p><h1>Clear prices.<br>VAT made simple.</h1><p class="intro">Enter your VAT-inclusive selling price to find the price excluding VAT.<br>All amounts are in euro.</p><section class="calculator" aria-label="VAT calculator"><div class="inputs"><div class="field"><label for="gross">Selling price including VAT (€)</label><input id="gross" type="number" min="0" step="0.01" value="40" inputmode="decimal"></div><div class="field"><label for="rate">VAT rate (%)</label><input id="rate" type="number" min="0" max="100" step="0.01" value="23" inputmode="decimal"><div class="chips" aria-label="VAT rate shortcuts"><button type="button" data-rate="23">23%</button><button type="button" data-rate="13.5">13.5%</button><button type="button" data-rate="9">9%</button><button type="button" data-rate="0">0%</button></div><p class="small">Choose a shortcut or enter your own rate. Use the VAT rate applicable to your product.</p></div><p id="error" role="alert"></p></div><div class="results" aria-live="polite"><p class="result-label">SELLING PRICE EXCLUDING VAT</p><div class="big" id="net">€32.52</div><div style="font-size:13px;color:#c1d8ec">Your price before VAT</div><div class="rule"></div><div class="row"><span id="vat-label">VAT amount (23%)</span><strong id="vat">€7.48</strong></div><div class="row"><span>Price including VAT</span><strong id="total">€40.00</strong></div><button class="copy" id="copy" type="button">Copy price excluding VAT</button></div></section><div class="formula"><strong>The calculation</strong><span id="formula">€40.00 ÷ 1.23 = €32.52 excluding VAT</span><br><span class="small">Divide by (1 + VAT rate ÷ 100). Subtracting 23% from a VAT-inclusive price gives a different result.</span></div><p class="foot">Amounts displayed to 2 decimal places. VAT amount is the inclusive price minus the rounded exclusive price.</p></main><script>
+<meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="default"><meta name="apple-mobile-web-app-title" content="Leddy VAT"><link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png"></head><body><main><header class="brand"><img src="leddy-logo.png" alt="Leddy Uniforms" width="108" height="108"><span>LEDDY UNIFORMS<small>VAT PRICE CALCULATOR</small></span></header><div class="app-tools"><button id="install-app" hidden>Install Leddy VAT</button><span id="apple-install" hidden>iPhone / iPad: Safari → Share → Add to Home Screen.</span><span id="offline-status" role="status">Preparing offline access…</span></div><p class="tag">EVERYDAY TOOLS FOR YOUR TEAM.</p><h1>Clear prices.<br>VAT made simple.</h1><p class="intro">Enter your VAT-inclusive selling price to find the price excluding VAT.<br>All amounts are in euro.</p><section class="calculator" aria-label="VAT calculator"><div class="inputs"><div class="field"><label for="gross">Selling price including VAT (€)</label><input id="gross" type="number" min="0" step="0.01" value="40" inputmode="decimal"></div><div class="field"><label for="rate">VAT rate (%)</label><input id="rate" type="number" min="0" max="100" step="0.01" value="23" inputmode="decimal"><div class="chips" aria-label="VAT rate shortcuts"><button type="button" data-rate="23">23%</button><button type="button" data-rate="13.5">13.5%</button><button type="button" data-rate="9">9%</button><button type="button" data-rate="0">0%</button></div><p class="small">Choose a shortcut or enter your own rate. Use the VAT rate applicable to your product.</p></div><p id="error" role="alert"></p></div><div class="results" aria-live="polite"><p class="result-label">SELLING PRICE EXCLUDING VAT</p><div class="big" id="net">€32.52</div><div style="font-size:13px;color:#c1d8ec">Your price before VAT</div><div class="rule"></div><div class="row"><span id="vat-label">VAT amount (23%)</span><strong id="vat">€7.48</strong></div><div class="row"><span>Price including VAT</span><strong id="total">€40.00</strong></div><button class="copy" id="copy" type="button">Copy price excluding VAT</button></div></section><div class="formula"><strong>The calculation</strong><span id="formula">€40.00 ÷ 1.23 = €32.52 excluding VAT</span><br><span class="small">Divide by (1 + VAT rate ÷ 100). Subtracting 23% from a VAT-inclusive price gives a different result.</span></div>
+
+<section class="basic" id="basic" tabindex="0" aria-label="Simple calculator">
+  <div>
+    <h2>Calculator</h2>
+    <p class="small">Add up orders, work out totals or quantities, then send the result straight into the VAT calculator above. Keyboard works too: type numbers, + − * /, Enter, Backspace and Esc.</p>
+    <div class="cdisplay" aria-live="polite"><div class="cexpr" id="c-expr"></div><div class="cval" id="c-val">0</div></div>
+    <div class="cactions">
+      <button type="button" id="c-use">Use as selling price ↑</button>
+      <button type="button" id="c-copy">Copy result</button>
+    </div>
+    <p id="c-msg" role="status"></p>
+  </div>
+  <div class="keys" role="group" aria-label="Calculator keys">
+    <button type="button" class="fn" data-k="C" aria-label="Clear">C</button>
+    <button type="button" class="fn" data-k="back" aria-label="Backspace">⌫</button>
+    <button type="button" class="fn" data-k="%" aria-label="Percent">%</button>
+    <button type="button" class="op" data-k="÷" aria-label="Divide">÷</button>
+    <button type="button" data-k="7">7</button><button type="button" data-k="8">8</button><button type="button" data-k="9">9</button>
+    <button type="button" class="op" data-k="×" aria-label="Multiply">×</button>
+    <button type="button" data-k="4">4</button><button type="button" data-k="5">5</button><button type="button" data-k="6">6</button>
+    <button type="button" class="op" data-k="−" aria-label="Subtract">−</button>
+    <button type="button" data-k="1">1</button><button type="button" data-k="2">2</button><button type="button" data-k="3">3</button>
+    <button type="button" class="op" data-k="+" aria-label="Add">+</button>
+    <button type="button" class="zero" data-k="0">0</button>
+    <button type="button" data-k=".">.</button>
+    <button type="button" class="eq" data-k="=" aria-label="Equals">=</button>
+  </div>
+</section>
+
+<p class="foot">Amounts displayed to 2 decimal places. VAT amount is the inclusive price minus the rounded exclusive price.</p></main><script>
 const gross=document.getElementById('gross'),rate=document.getElementById('rate'),copy=document.getElementById('copy');let copyValue='';const money=n=>new Intl.NumberFormat('en-IE',{style:'currency',currency:'EUR'}).format(n);function update(){const g=Number(gross.value),r=Number(rate.value);const valid=gross.value.trim()!==''&&rate.value.trim()!==''&&Number.isFinite(g)&&Number.isFinite(r)&&g>=0&&r>=0&&r<=100&&g<=1e12;document.getElementById('error').textContent=valid?'':'Enter a price from 0 to 1 trillion and a VAT rate from 0% to 100%.';copy.disabled=!valid;document.querySelectorAll('[data-rate]').forEach(b=>{let active=Number(b.dataset.rate)===r&&valid;b.classList.toggle('active',active);b.setAttribute('aria-pressed',active)});let n=valid?Math.round((g/(1+r/100)+Number.EPSILON)*100)/100:0;copyValue=valid?n.toFixed(2):'';document.getElementById('net').textContent=valid?money(n):'—';document.getElementById('vat').textContent=valid?money(g-n):'—';document.getElementById('total').textContent=valid?money(g):'—';document.getElementById('vat-label').textContent=valid?'VAT amount ('+r+'%)':'VAT amount';document.getElementById('formula').textContent=valid?money(g)+' ÷ '+Number((1+r/100).toFixed(4))+' = '+money(n)+' excluding VAT':'Enter a price and VAT rate to calculate.';copy.textContent='Copy price excluding VAT'}gross.addEventListener('input',update);rate.addEventListener('input',update);document.querySelectorAll('[data-rate]').forEach(b=>b.addEventListener('click',()=>{rate.value=b.dataset.rate;update()}));copy.addEventListener('click',async()=>{try{await navigator.clipboard.writeText(copyValue);copy.textContent='Copied '+copyValue}catch{copy.textContent='Price: '+copyValue}});update();
+</script><script>
+/* Simple calculator */
+(function(){
+  const box=document.getElementById('basic'),exprEl=document.getElementById('c-expr'),valEl=document.getElementById('c-val'),msg=document.getElementById('c-msg'),useBtn=document.getElementById('c-use'),copyBtn=document.getElementById('c-copy');
+  let cur='0',prev=null,op=null,waiting=false,fresh=false,error=false,msgTimer;
+  const tidy=n=>Number(n.toPrecision(12));
+  const fmt=n=>{const s=String(tidy(Number(n)));return s};
+  const show=n=>{const [i,d]=n.split('.');const neg=i.startsWith('-');const digits=neg?i.slice(1):i;const g=/^\d+$/.test(digits)?digits.replace(/\B(?=(\d{3})+(?!\d))/g,','):digits;return (neg?'-':'')+g+(d!==undefined?'.'+d:'')};
+  function say(t){msg.textContent=t;clearTimeout(msgTimer);if(t)msgTimer=setTimeout(()=>msg.textContent='',3500)}
+  function render(){
+    valEl.textContent=error?'Error':show(cur);
+    const n=Number(cur);
+    const ok=!error&&Number.isFinite(n)&&n>=0&&n<=1e12;
+    useBtn.disabled=!ok;copyBtn.disabled=error;
+  }
+  function calc(a,b,o){
+    if(o==='+')return a+b;if(o==='−')return a-b;if(o==='×')return a*b;
+    if(o==='÷')return b===0?NaN:a/b;return b;
+  }
+  function fail(text){error=true;cur='0';prev=null;op=null;waiting=false;fresh=true;exprEl.textContent=text;render()}
+  function digit(d){
+    if(error)reset();
+    if(waiting||fresh){cur='0';waiting=false;fresh=false;if(op===null)exprEl.textContent=''}
+    if(d==='.'){if(cur.includes('.'))return;cur+='.'}
+    else if(cur==='0')cur=d;else if(cur==='-0')cur='-'+d;else{if(cur.replace(/[-.]/g,'').length>=15)return;cur+=d}
+    render();
+  }
+  function operator(o){
+    if(error)return;
+    if(op!==null&&!waiting){
+      const r=calc(prev,Number(cur),op);
+      if(!Number.isFinite(r))return fail('Cannot divide by 0');
+      prev=tidy(r);cur=String(prev);
+    }else if(op===null){prev=Number(cur)}
+    op=o;waiting=true;fresh=false;
+    exprEl.textContent=show(fmt(prev))+' '+o;render();
+  }
+  function equals(){
+    if(error||op===null)return;
+    const b=waiting?prev:Number(cur),r=calc(prev,b,op);
+    if(!Number.isFinite(r))return fail('Cannot divide by 0');
+    exprEl.textContent=show(fmt(prev))+' '+op+' '+show(fmt(b))+' =';
+    cur=String(tidy(r));prev=null;op=null;waiting=false;fresh=true;render();
+  }
+  function percent(){
+    if(error)return;
+    const n=Number(cur);
+    // In "a + b %" style, treat b as a percentage of a; otherwise just divide by 100
+    const v=(op==='+'||op==='−')&&prev!==null&&!waiting?prev*n/100:n/100;
+    cur=String(tidy(v));fresh=false;render();
+  }
+  function back(){
+    if(error)return reset();
+    if(waiting||fresh)return;
+    cur=cur.slice(0,-1);if(cur===''||cur==='-')cur='0';render();
+  }
+  function reset(){cur='0';prev=null;op=null;waiting=false;fresh=false;error=false;exprEl.textContent='';render()}
+  function press(k){
+    if(/^\d$/.test(k)||k==='.')digit(k);
+    else if('+−×÷'.includes(k))operator(k);
+    else if(k==='=')equals();
+    else if(k==='C')reset();
+    else if(k==='back')back();
+    else if(k==='%')percent();
+  }
+  box.querySelectorAll('[data-k]').forEach(b=>b.addEventListener('click',()=>press(b.dataset.k)));
+  const map={'*':'×','x':'×','X':'×','/':'÷','-':'−','+':'+','Enter':'=','=':'=','Backspace':'back','Escape':'C','Delete':'C','%':'%',',':'.'};
+  box.addEventListener('keydown',e=>{
+    if(e.ctrlKey||e.metaKey||e.altKey)return;
+    let k=null;
+    if(/^\d$/.test(e.key)||e.key==='.')k=e.key;else if(map[e.key])k=map[e.key];
+    if(k===null)return;
+    e.preventDefault();press(k);
+  });
+  useBtn.addEventListener('click',()=>{
+    const n=Number(cur);
+    if(error||!Number.isFinite(n)||n<0||n>1e12)return say('Enter a positive amount to use as a price.');
+    gross.value=(Math.round((n+Number.EPSILON)*100)/100).toFixed(2);
+    gross.dispatchEvent(new Event('input',{bubbles:true}));
+    say('Sent €'+gross.value+' to the VAT calculator.');
+    gross.scrollIntoView({behavior:'smooth',block:'center'});
+  });
+  copyBtn.addEventListener('click',async()=>{
+    const v=fmt(cur);
+    try{await navigator.clipboard.writeText(v);say('Copied '+v)}catch{say('Result: '+v)}
+  });
+  render();
+})();
 </script><script>
 let installPrompt;
 const isApple=/iPad|iPhone|iPod/.test(navigator.userAgent)||(navigator.platform==='MacIntel'&&navigator.maxTouchPoints>1);
